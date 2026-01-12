@@ -1,0 +1,143 @@
+.recent-calls-table {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px 120px 80px;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 16px;
+}
+
+.header-cell {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 120px 120px 80px;
+  gap: 16px;
+  padding: 16px;
+  background: var(--background-primary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  align-items: center;
+}
+
+.table-row:hover {
+  background: white;
+  box-shadow: var(--shadow-light);
+}
+
+.table-cell {
+  display: flex;
+  align-items: center;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.customer-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-light);
+}
+
+.agent-name {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.duration-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.duration-icon {
+  width: 14px;
+  height: 14px;
+  color: var(--text-light);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.status-success {
+  background: rgba(56, 161, 105, 0.1);
+  color: var(--success-color);
+}
+
+.status-badge.status-info {
+  background: rgba(49, 130, 206, 0.1);
+  color: var(--info-color);
+}
+
+.status-badge.status-danger {
+  background: rgba(229, 62, 62, 0.1);
+  color: var(--accent-color);
+}
+
+.status-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.call-time {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .table-header,
+  .table-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .table-row {
+    padding: 12px;
+  }
+  
+  .header-cell {
+    display: none;
+  }
+  
+  .table-cell {
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  
+  .table-cell:last-child {
+    border-bottom: none;
+  }
+  
+  .table-cell::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--text-secondary);
+    font-size: 12px;
+  }
+}
