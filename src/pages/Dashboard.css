@@ -1,0 +1,82 @@
+.dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.dashboard-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.stats-grid {
+  margin-bottom: 30px;
+}
+
+.dashboard-content {
+  margin-bottom: 30px;
+}
+
+.chart-section,
+.agents-section {
+  height: 400px;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.legend-item::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-item.incoming::before {
+  background: var(--info-color);
+}
+
+.legend-item.outgoing::before {
+  background: var(--success-color);
+}
+
+.recent-calls-section .card {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+  
+  .chart-section,
+  .agents-section {
+    height: auto;
+  }
+  
+  .chart-legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
